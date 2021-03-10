@@ -7,5 +7,8 @@ public class SnakeAndLadder {
 	// Main method to execute program
 	public static void main(String args[]) {
 		int playerPosition = initialPosition;
+		//Generating random number
+		int dieNumber = (int) Math.floor(Math.random() * 6) + 1;
+		playerPosition += dieNumber;
 	}
 }
