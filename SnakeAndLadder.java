@@ -10,27 +10,31 @@ public class SnakeAndLadder {
 		int currentPosition;
 		int playerPosition = initialPosition;
 
-		//Generating random number
-		int playNoPlay = (int) Math.floor(Math.random() * 10) % 3;
-		currentPosition = playerPosition;
-		switch (playNoPlay) {
-		case 0:
-			playerPosition = currentPosition;
-			break;
-		case 1:
-			dieNumber = (int) Math.floor(Math.random() * 6) + 1;
-			playerPosition += dieNumber;
-			if (playerPosition > 100) {
+		//loop to iterate the code till the winning position
+		while (playerPosition != finalPosition) {
+			//Generating random number
+			int playNoPlay = (int) Math.floor(Math.random() * 10) % 3;
+			currentPosition = playerPosition;
+			switch (playNoPlay) {
+			case 0:
 				playerPosition = currentPosition;
+				break;
+			case 1:
+				dieNumber = (int) Math.floor(Math.random() * 6) + 1;
+				playerPosition += dieNumber;
+				if (playerPosition > 100) {
+					playerPosition = currentPosition;
+				}
+				break;
+			case 2:
+				dieNumber = (int) Math.floor(Math.random() * 6) + 1;
+				playerPosition -= dieNumber;
+				if (playerPosition <= 1) {
+					playerPosition = 1;
+				}
+				break;
 			}
-			break;
-		case 2:
-			dieNumber = (int) Math.floor(Math.random() * 6) + 1;
-			playerPosition -= dieNumber;
-			if (playerPosition <= 1) {
-				playerPosition = 1;
-			}
-			break;
 		}
 	}
 }
+
