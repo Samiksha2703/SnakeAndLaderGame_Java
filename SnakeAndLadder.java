@@ -6,12 +6,14 @@ public class SnakeAndLadder {
 
 	// Main method to execute program
 	public static void main(String args[]) {
+		int steps = 0;
 		int dieNumber;
 		int currentPosition;
 		int playerPosition = initialPosition;
 
 		//loop to iterate the code till the winning position
 		while (playerPosition != finalPosition) {
+			steps++;
 			//Generating random number
 			int playNoPlay = (int) Math.floor(Math.random() * 10) % 3;
 			currentPosition = playerPosition;
